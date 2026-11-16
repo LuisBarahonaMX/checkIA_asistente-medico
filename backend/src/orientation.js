@@ -32,7 +32,7 @@ export class OrientationService {
    if((session.orientationAttempts||0)>=5)fail(429,'Esta consulta alcanzó el límite de solicitudes de orientación.');
    if(session.orientationRun?.status==='failed'&&at-session.orientationRun.updatedAt<15000)fail(429,'Espera unos segundos antes de intentarlo nuevamente.');
    const context=orientationContext(session);
-   tx.update(ref,{orientationAttempts:(session.orientationAttempts||0)+1,orientationRun:{status:'pending',token,basedOnRevision:expectedRevision,expiresAt:at+this.leaseMs,updatedAt:at},orientationConsent:{provider:'OpenAI',version:'22.2',acceptedAt:at,basedOnRevision:expectedRevision}});
+   tx.update(ref,{orientationAttempts:(session.orientationAttempts||0)+1,orientationRun:{status:'pending',token,basedOnRevision:expectedRevision,expiresAt:at+this.leaseMs,updatedAt:at},orientationConsent:{provider:(this.client?.provider || 'OpenAI'),version:'22.2',acceptedAt:at,basedOnRevision:expectedRevision}});
    return {context};
   });
   if(claim.cached)return {orientation:claim.cached,cached:true};
@@ -46,7 +46,7 @@ export class OrientationService {
    const validated=validateOrientation(generated.result);
    const allowed=new Set(claim.context.availableClarifications.map(q=>q.id));
    const {result,rag}=bindEvidence({...validated,aclaraciones_sugeridas:validated.aclaraciones_sugeridas.filter(id=>allowed.has(id))},evidence);
-   const orientation={status:'ready',retrievalVersion:this.retriever?.version||'disabled',rag,basedOnRevision:expectedRevision,createdAt:this.now(),provider:'OpenAI',model:generated.model,promptVersion:generated.promptVersion,result,usage:generated.usage,clinicallyValidated:false};
+   const orientation={status:'ready',retrievalVersion:this.retriever?.version||'disabled',rag,basedOnRevision:expectedRevision,createdAt:this.now(),provider:(this.client?.provider || 'OpenAI'),model:generated.model,promptVersion:generated.promptVersion,result,usage:generated.usage,clinicallyValidated:false};
    await this.store.db.runTransaction(async tx=>{
     const session=this.store.owned(await tx.get(ref),uid),state=session.clinicalState;
     if(session.orientationRun?.token!==token)fail(409,'La solicitud cambió. Recarga la consulta.');

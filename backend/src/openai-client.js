@@ -18,12 +18,12 @@ export function validateOrientation(value) {
  if(/https?:\/\/|www\./i.test(JSON.stringify(value)))throw failure(502,'La orientación contiene un enlace que no pudo comprobarse.');
  return value;
 }
-export function createOpenAIClient({apiKey=process.env.OPENAI_API_KEY,model=process.env.OPENAI_MODEL||'gpt-6-sol',enabled=process.env.CHECKIA_LLM_ENABLED==='true',fetchImpl=globalThis.fetch,timeoutMs=45000}={}) {
+export function createOpenAIClient({apiKey=process.env.OPENAI_API_KEY,model=process.env.OPENAI_MODEL||'gpt-6-sol',enabled=process.env.CHECKIA_LLM_ENABLED==='true',fetchImpl=globalThis.fetch,timeoutMs=45000,endpoint='https://api.openai.com/v1/responses',provider='OpenAI'}={}) {
  const configured=Boolean(enabled&&apiKey?.trim());
- return {configured,model,promptVersion:PROMPT_VERSION,async generate(context){
+ return {configured,model,provider,promptVersion:PROMPT_VERSION,async generate(context){
   if(!configured)throw failure(503,'La orientación no está disponible en este momento. Puedes seguir consultando tu resumen.');
   let response;
-  try {response=await fetchImpl('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${apiKey.trim()}`,'Content-Type':'application/json'},signal:AbortSignal.timeout(timeoutMs),body:JSON.stringify({model,store:false,instructions,input:[{role:'user',content:JSON.stringify(context)}],reasoning:{effort:'low'},max_output_tokens:6000,text:{format:{type:'json_schema',name:'checkia_orientation',strict:true,schema:OUTPUT_SCHEMA}}})});}
+  try {response=await fetchImpl(endpoint,{method:'POST',headers:{Authorization:`Bearer ${apiKey.trim()}`,'Content-Type':'application/json'},signal:AbortSignal.timeout(timeoutMs),body:JSON.stringify({model,store:false,instructions,input:[{role:'user',content:JSON.stringify(context)}],...(provider==='OpenAI'?{reasoning:{effort:'low'}}:{}),max_output_tokens:provider==='OpenAI'?6000:3000,text:{format:{type:'json_schema',name:'checkia_orientation',strict:true,schema:OUTPUT_SCHEMA}}})});}
   catch {throw failure(504,'La orientación tardó demasiado o no se pudo conectar. Intenta nuevamente en unos momentos.');}
   if(!response.ok)throw failure(response.status===429?429:502,response.status===429?'El servicio está ocupado o alcanzó su límite de uso. Intenta más tarde.':'No se pudo generar la orientación. Intenta más tarde.');
   let body;try{body=await response.json();}catch{throw failure(502,'No se recibió una orientación válida.');}
