@@ -13,10 +13,12 @@ import './experience.css';
 import './mobile.css';
 import './interactions.css';
 import './paso23-ux.css';
+import './nasa-shell.css';
 import {AnswerOptions,InterviewProgress,LoadingDots} from './Interactions.jsx';
 import {WelcomeIntro,HealthMark} from './Experience.jsx';
 import {ConsultationSummary} from './ConsultationSummary.jsx';
 import {createdInterview,friendlyApiError} from './interview-client.mjs';
+import NasaWorkspace from './NasaWorkspace.jsx';
 import {OrientationPanel} from './OrientationPanel.jsx';
 import {EmergencyHelp} from './EmergencyHelp.jsx';
 const legacyQuestionNumbers = {alarm_screen:'1',reason:'2',age:'3',onset:'4',onset_when:'4.1',location:'5',severity:'6',associated:'7',history:'8',medications:'9',medications_formulation:'9.1',medications_amount:'9.2',medications_frequency:'9.3',allergies:'10',allergies_substance:'10.1',allergies_reaction:'10.2',allergies_when:'10.3'};
@@ -36,6 +38,8 @@ function App() {
   }
   const [adminAllowed,setAdminAllowed]=useState(false),[view,setView]=useState('consultations'),[accountInfo,setAccountInfo]=useState(null);
   const [showIntro,setShowIntro]=useState(false);
+  const [nasaEnabled,setNasaEnabled]=useState(false);
+  useEffect(()=>{let active=true;fetch('/api/health').then(r=>r.json()).then(h=>{if(active)setNasaEnabled(h.nasaMode===true)}).catch(()=>{});return()=>{active=false}},[]);
   const [user, setUser] = useState(null), [ready, setReady] = useState(false);
   const [email, setEmail] = useState(''), [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false), [error, setError] = useState('');
@@ -145,7 +149,14 @@ function App() {
     if (!current) throw new Error('Inicia sesión nuevamente.');
     const token = await current.getIdToken();
     const response = await fetch('/api' + path, { method, headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }, ...(body ? { body: JSON.stringify(body) } : {}) });
-    if (!response.ok) { const data = await response.json().catch(() => ({})); throw new Error(friendlyApiError(response.status,data.error,path.endsWith('/orientation')?'orientation':'')); }
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      if (path.startsWith('/nasa/')) {
+        const description = typeof data.error==='string' ? data.error.slice(0,300) : 'Error de comunicación o validación.';
+        throw new Error('NASA HTTP '+response.status+': '+description);
+      }
+      throw new Error(friendlyApiError(response.status,data.error,path.endsWith('/orientation')?'orientation':''));
+    }
     if (auth.currentUser?.uid !== current.uid) throw new Error('La cuenta cambió durante la solicitud.');
     return response.status === 204 ? null : response.json();
   }
@@ -249,16 +260,16 @@ function App() {
   },[]);
   const clarification = lastMessage?.role === 'assistant' && lastMessage.kind === 'clarification' && lastMessage.nextQuestionId===pending?.id && lastMessage.text!==pending?.text && !lastMessage.text.endsWith(pending?.text||'__none__') ? lastMessage.text : '';
   if(user&&showIntro)return <WelcomeIntro onDone={()=>{setShowIntro(false);requestAnimationFrame(()=>document.getElementById('main-content')?.focus({preventScroll:true}));}}/>;
-  return <main className={user ? 'workspace' : 'login-page'}>
+  return <main className={(user ? 'workspace' : 'login-page') + (nasaEnabled ? ' nasa-app-shell' : '')} lang={nasaEnabled?'es-MX':undefined}>
     <a className="skip-link" href="#main-content">Ir al contenido</a>
     <header className="topbar">
-      <div><p className="eyebrow">ASISTENTE VIRTUAL</p><h1>check<span>IA</span></h1></div>
+      <div><p className="eyebrow">{nasaEnabled?'ASISTENTE VIRTUAL':'ASISTENTE VIRTUAL'}</p><h1>{nasaEnabled?'CHECK_IA_CUBE_NASA':<>check<span>IA</span></>}</h1></div>
       {user && <div className="account"><span>{user.email}</span><button className="secondary" disabled={busy} onClick={logout}>Cerrar sesión</button></div>}
     </header>
     {authNotice && <div className="notice success" role="status">{authNotice}</div>}
     {error && <div className="notice error" role="alert">{error}</div>}
     {user&&view==='consultations'&&selected?.status==='closed'&&<div className="consultation-heading compact-heading closed-consultation-heading"><div className="consultation-title"><h2>Diagnóstico cerrado</h2><span className="session-id">Consulta {selected.id.slice(0,8)}</span></div></div>}
-    {!ready ? <p role="status">Comprobando acceso…</p> : user ? (<div className={"layout"+(!selected&&view==='consultations'?" waiting-consultation":" has-content")+(view==='consultations'&&paso23Protocol?" paso23-priority":"")}>
+    {!ready ? <p role="status">Comprobando acceso…</p> : user ? (nasaEnabled ? <NasaWorkspace api={api}/> : <div className={"layout"+(!selected&&view==='consultations'?" waiting-consultation":" has-content")+(view==='consultations'&&paso23Protocol?" paso23-priority":"")}>
       {view==='consultations'&&paso23Protocol&&selected.clinicalState.emergency?.requiresRag&&<Paso23Emergency state={selected.clinicalState}/>}
       {view==='consultations'&&selected&&completedPaso23&&<div className="primary-orientation">
           <OrientationPanel key={selected.id+":"+(selected.clinicalState?.revision||0)} session={selected} busy={busy} generating={busyOperation==='orientation'} error={errorOperation==='orientation'?error:''} onGenerate={generateOrientation} onBegin={beginAdditional} onExtra={addPaso23Extra}/>
@@ -331,20 +342,20 @@ function App() {
       <nav className="admin-nav" aria-label="Secciones de CHECKIA"><button type="button" className="secondary" disabled={busy} aria-pressed={view==='consultations'} onClick={()=>setView('consultations')}>Mis consultas</button>{adminAllowed&&<button type="button" className="secondary" disabled={busy} aria-pressed={view==='admin'} onClick={()=>setView('admin')}>Panel de administrador</button>}</nav>
       </div>
       {view==='consultations'&&paso23Protocol&&!selected.clinicalState.emergency?.requiresRag&&<Paso23Emergency state={selected.clinicalState}/>}
-    </div>) : <section id="main-content" tabIndex={-1} className="panel login-card"><h2>{authMode==='register'?'Crear cuenta':authMode==='reset'?'Recuperar contraseña':'Inicia sesión'}</h2>
-      <p className="muted">{authMode==='reset'?'Escribe el correo de tu cuenta para solicitar el enlace de recuperación.':'Accede para crear y recuperar tus consultas de prueba.'}</p>
+    </div>) : <section id="main-content" tabIndex={-1} className="panel login-card"><h2>{authMode==='register'?(nasaEnabled?'Crear cuenta':'Crear cuenta'):authMode==='reset'?(nasaEnabled?'Recuperar contraseña':'Recuperar contraseña'):(nasaEnabled?'Inicia sesión':'Inicia sesión')}</h2>
+      <p className="muted">{authMode==='reset'?(nasaEnabled?'Escribe el correo de tu cuenta para solicitar el enlace de recuperación.':'Escribe el correo de tu cuenta para solicitar el enlace de recuperación.'):(nasaEnabled?'Accede para crear y recuperar tus consultas de prueba.':'Accede para crear y recuperar tus consultas de prueba.')}</p>
       <form onSubmit={authMode==='register'?register:authMode==='reset'?recoverPassword:login}>
-        <label htmlFor="email">Correo electrónico</label><input id="email" type="email" autoComplete="username" required value={email} onChange={e=>setEmail(e.target.value)} disabled={busy}/>
-        {authMode!=='reset' && <><label htmlFor="password">Contraseña</label><input id="password" type="password" autoComplete={authMode==='register'?'new-password':'current-password'} minLength={authMode==='register'?12:undefined} maxLength={authMode==='register'?128:undefined} required value={password} onChange={e=>setPassword(e.target.value)} disabled={busy}/></>}
-        {authMode==='register' && <><p className="auth-help">Usa una frase de varias palabras que puedas recordar, de al menos 12 caracteres. Firebase puede solicitar requisitos adicionales.</p><label htmlFor="confirm-password">Repite la contraseña</label><input id="confirm-password" type="password" autoComplete="new-password" required value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} disabled={busy}/></>}
-        <button type="submit" disabled={busy}>{busy?'Procesando…':authMode==='register'?'Crear mi cuenta':authMode==='reset'?'Enviar enlace de recuperación':'Iniciar sesión con correo'}</button>
+        <label htmlFor="email">{nasaEnabled?'Correo electrónico':'Correo electrónico'}</label><input id="email" type="email" autoComplete="username" required value={email} onChange={e=>setEmail(e.target.value)} disabled={busy}/>
+        {authMode!=='reset' && <><label htmlFor="password">{nasaEnabled?'Contraseña':'Contraseña'}</label><input id="password" type="password" autoComplete={authMode==='register'?'new-password':'current-password'} minLength={authMode==='register'?12:undefined} maxLength={authMode==='register'?128:undefined} required value={password} onChange={e=>setPassword(e.target.value)} disabled={busy}/></>}
+        {authMode==='register' && <><p className="auth-help">{nasaEnabled?'Usa una frase de varias palabras que puedas recordar, de al menos 12 caracteres. Firebase puede solicitar requisitos adicionales.':'Usa una frase de varias palabras que puedas recordar, de al menos 12 caracteres. Firebase puede solicitar requisitos adicionales.'}</p><label htmlFor="confirm-password">{nasaEnabled?'Repite la contraseña':'Repite la contraseña'}</label><input id="confirm-password" type="password" autoComplete="new-password" required value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} disabled={busy}/></>}
+        <button type="submit" disabled={busy}>{busy?(nasaEnabled?'Procesando…':'Procesando…'):authMode==='register'?(nasaEnabled?'Crear mi cuenta':'Crear mi cuenta'):authMode==='reset'?(nasaEnabled?'Enviar enlace de recuperación':'Enviar enlace de recuperación'):(nasaEnabled?'Iniciar sesión con correo':'Iniciar sesión con correo')}</button>
       </form>
       <div className="auth-options">
         {authMode!=='register' && <button type="button" className="secondary" disabled={busy} onClick={()=>changeAuthMode('register')}>Crear cuenta</button>}
-        {authMode!=='reset' && <button type="button" className="secondary" disabled={busy} onClick={()=>changeAuthMode('reset')}>Olvidé mi contraseña</button>}
-        {authMode!=='login' && <button type="button" className="secondary" disabled={busy} onClick={()=>changeAuthMode('login')}>Volver a iniciar sesión</button>}
+        {authMode!=='reset' && <button type="button" className="secondary" disabled={busy} onClick={()=>changeAuthMode('reset')}>{nasaEnabled?'Olvidé mi contraseña':'Olvidé mi contraseña'}</button>}
+        {authMode!=='login' && <button type="button" className="secondary" disabled={busy} onClick={()=>changeAuthMode('login')}>{nasaEnabled?'Volver a iniciar sesión':'Volver a iniciar sesión'}</button>}
       </div>
-      <div className="divider">o</div><button type="button" className="secondary" disabled={busy} onClick={loginGoogle}>Continuar con Google</button>
+      <div className="divider">o</div><button type="button" className="secondary" disabled={busy} onClick={loginGoogle}>{nasaEnabled?'Continuar con Google':'Continuar con Google'}</button>
     </section>}
 
     {user && <details className="account-settings"><summary>Mi cuenta</summary><p>Identificador de cuenta (UID): {accountInfo?.uid||user.uid}</p><p>{adminAllowed?'Permiso de administrador activo.':'Cuenta de usuario.'}</p><button type="button" className="secondary" disabled={busy} onClick={()=>action(refreshPermissions)}>Actualizar permisos</button></details>}

@@ -1,0 +1,41 @@
+/* VISUAL ONLY: position existing audio controls at lower-right, 50% size.
+   No changes to the checkbox, slider, playback code, or other UI sections. */
+.checkia-nasa-audio-bottom {
+  position: fixed !important;
+  inset: auto 12px 10px auto !important;
+  transform: scale(.5) !important;
+  transform-origin: bottom right !important;
+  z-index: 1000 !important;
+  box-sizing: border-box !important;
+  max-width: min(760px, 94vw) !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  box-shadow: 0 3px 14px rgba(0,0,0,.16) !important;
+}
+@media (max-width: 600px) {
+  .checkia-nasa-audio-bottom {
+    right: 4px !important;
+    bottom: max(4px, env(safe-area-inset-bottom)) !important;
+    max-width: 190vw !important;
+  }
+}
+
+/* Fallback when audio controls share a banner with the mission-status label. */
+.checkia-nasa-audio-toggle,
+.checkia-nasa-audio-volume {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 10px !important;
+  transform: scale(.5) !important;
+  transform-origin: bottom right !important;
+  z-index: 1000 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  box-shadow: 0 3px 14px rgba(0,0,0,.16) !important;
+}
+.checkia-nasa-audio-toggle { right: 150px !important; }
+.checkia-nasa-audio-volume { right: 8px !important; }
+@media (max-width:600px) {
+  .checkia-nasa-audio-toggle { right: 130px !important; }
+  .checkia-nasa-audio-volume { right: 4px !important; }
+}

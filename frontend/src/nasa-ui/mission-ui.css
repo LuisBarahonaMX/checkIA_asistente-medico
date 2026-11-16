@@ -1,0 +1,11 @@
+:root { --mission-night:#071b33; --mission-blue:#0033a0; --mission-cyan:#00d4ff; --mission-medical:#00c896; --mission-white:#f5f8fc; }
+.mission-question-enter { animation:mission-enter .36s ease-out both; }
+@keyframes mission-enter { from { opacity:0; transform:translateX(12px); filter:blur(2px) } to { opacity:1; transform:translateX(0); filter:blur(0) } }
+.mission-complete { position:fixed; inset:0; z-index:9999; display:grid; place-items:center; padding:20px; background:rgba(3,15,32,.94); color:var(--mission-white); }
+.mission-complete-panel { width:min(100%,560px); padding:32px 24px; border:1px solid rgba(0,212,255,.35); border-radius:18px; background:var(--mission-night); text-align:center; animation:mission-enter .5s ease-out; box-shadow:0 0 50px rgba(0,212,255,.10); }
+.mission-complete-panel h2 { font-size:clamp(1.4rem,4vw,2rem); letter-spacing:.09em; }
+.mission-complete-panel p { line-height:1.5; }
+.mission-complete-panel button { margin-top:18px; border:0; border-radius:9px; padding:14px 20px; background:var(--mission-cyan); color:#00182a; font-weight:700; cursor:pointer; }
+.mission-check { height:74px; width:74px; display:grid; place-items:center; margin:0 auto 18px; border-radius:50%; border:2px solid var(--mission-medical); color:var(--mission-medical); font-size:40px; animation:mission-pulse .9s ease-in-out 2; }
+@keyframes mission-pulse { 50% { box-shadow:0 0 0 14px rgba(0,200,150,.08); transform:scale(1.07) } }
+@media (prefers-reduced-motion:reduce) { .mission-question-enter,.mission-complete-panel,.mission-check { animation:none !important } }

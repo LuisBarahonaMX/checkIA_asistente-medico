@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 const firebaseConfig = {
-  apiKey: 
+  apiKey: "AIzaSyA7O6ggpCw3q8i0139ZzJvwczoSIrOtFaM",
   authDomain: "checkia-project.firebaseapp.com",
   projectId: "checkia-project",
   storageBucket: "checkia-project.firebasestorage.app",

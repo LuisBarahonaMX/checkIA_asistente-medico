@@ -1,11 +1,12 @@
+import {nasaQuestions,evaluateNasa} from './nasa-mode.js';
 import {requireAdmin} from './admin.js';
 import express from 'express';
 import { requireIdentity } from './identity.js';
 export function createApp({ store, orientationService = null, adminService = null, verifyToken = async () => { throw new Error('not configured'); } } = {}) {
   const app = express(); app.disable('x-powered-by');
-  app.use(express.json({ limit: '16kb' }));
+  app.use(express.json({ limit: '64kb' }));
   app.use((req, res, next) => { res.set({'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','X-Frame-Options':'DENY'}); next(); });
-  app.get('/api/health', (req, res) => res.json({ service: 'CHECKIA', stage: 22, step: '22.3', storage: 'firestore', medicalInference: false, interview: 'intake-demo-v8', validationVersion: 16, summaryVersion:2, safetyVersion: 'alarm-demo-v2', rag: orientationService?.retriever?.status || {enabled:false,ready:false,state:'not_configured'}, llm: {configured: Boolean(orientationService?.client?.configured)} }));
+  app.get('/api/health', (req, res) => res.json({ service: 'CHECKIA', stage: 22, step: '22.3', storage: 'firestore', medicalInference: false, nasaMode: process.env.CHECKIA_NASA_MODE==='true', interview: 'intake-demo-v8', validationVersion: 16, summaryVersion:2, safetyVersion: 'alarm-demo-v2', rag: orientationService?.retriever?.status || {enabled:false,ready:false,state:'not_configured'}, llm: {configured: Boolean(orientationService?.client?.configured)} }));
   app.use('/api', requireIdentity(verifyToken));
   app.get('/api/me', (req, res) => res.json({ verified: true, ...req.identity, projectId: 'checkia-project' }));
   const wrap = fn => async (req, res, next) => { try { await fn(req, res); } catch (e) { next(e); } };
@@ -43,6 +44,9 @@ export function createApp({ store, orientationService = null, adminService = nul
     res.status(201).json(await store.correct(req.params.id,req.identity.uid,answer.trim(),req.body?.requestId,req.body.factKey,req.body?.expectedRevision));
   }));
   app.delete('/api/sessions/:id', wrap(async (req, res) => { await store.delete(req.params.id, req.identity.uid); res.status(204).end(); }));
+  // NASA experimental: solo sesiones autenticadas; ninguna notificacion real.
+  app.get('/api/nasa/questions', (req,res)=>res.json(nasaQuestions()));
+  app.post('/api/nasa/evaluate', wrap(async (req,res)=>res.json(await evaluateNasa(req.body))));
   app.use((req, res) => res.status(404).json({ error: 'Ruta no encontrada.' }));
   app.use((err, req, res, next) => {
     const status = err.type === 'entity.too.large' ? 413 : err.type === 'entity.parse.failed' ? 400 : Number.isInteger(err.status) && [400,404,409,410,429,502,503,504].includes(err.status) ? err.status : 500;
