@@ -1,0 +1,841 @@
+{
+  "schemaVersion": "0.1.0",
+  "mode": "nasa-simulation",
+  "recordCount": 50,
+  "clinicalValidation": false,
+  "policy": "Registros de verificación elaborados para prototipo; las URL son fuentes contextuales, no citas de párrafos ni protocolos operativos validados.",
+  "sourceCatalog": [
+    {
+      "id": "NASA-STD-3001-V1",
+      "title": "NASA-STD-3001 Volumen 1",
+      "url": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1"
+    },
+    {
+      "id": "NASA-STD-3001-V2",
+      "title": "NASA-STD-3001 Volumen 2",
+      "url": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2"
+    },
+    {
+      "id": "NASA-HRR",
+      "title": "NASA HRR Evidence",
+      "url": "https://humanresearchroadmap.nasa.gov/Evidence/"
+    }
+  ],
+  "records": [
+    {
+      "id": "NASA-KB-001",
+      "area": "environment_pressure",
+      "area_nombre": "Presión y despresurización",
+      "tema": "alarma_presion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se registró una alarma de presión y cuál fue su estado?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-002",
+      "area": "environment_pressure",
+      "area_nombre": "Presión y despresurización",
+      "tema": "cronologia_presion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Cuándo se produjo la alteración ambiental respecto a los síntomas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-003",
+      "area": "environment_pressure",
+      "area_nombre": "Presión y despresurización",
+      "tema": "integridad_cabina",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Existe confirmación operativa del estado de la cabina?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-004",
+      "area": "environment_pressure",
+      "area_nombre": "Presión y despresurización",
+      "tema": "sensacion_oidos",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se informó dolor o molestia de oídos después del incidente?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-005",
+      "area": "environment_pressure",
+      "area_nombre": "Presión y despresurización",
+      "tema": "lecturas_presion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Hay mediciones de presión verificables y unidades?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-006",
+      "area": "environment_oxygen",
+      "area_nombre": "Oxígeno y respiración",
+      "tema": "alarma_oxigeno",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Hay una alarma de oxígeno confirmada?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-007",
+      "area": "environment_oxygen",
+      "area_nombre": "Oxígeno y respiración",
+      "tema": "medicion_oxigeno",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Existe medición ambiental de oxígeno validada?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-008",
+      "area": "environment_oxygen",
+      "area_nombre": "Oxígeno y respiración",
+      "tema": "molestia_respiratoria",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se reportaron dificultades respiratorias actuales?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-009",
+      "area": "environment_oxygen",
+      "area_nombre": "Oxígeno y respiración",
+      "tema": "secuencia_oxigeno",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Cuál es la secuencia temporal de alerta y síntomas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-010",
+      "area": "environment_oxygen",
+      "area_nombre": "Oxígeno y respiración",
+      "tema": "estado_sensor_o2",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se conoce el estado de calibración del sensor?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-011",
+      "area": "environment_co2",
+      "area_nombre": "CO₂ y ventilación",
+      "tema": "alarma_co2",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se notificó una alarma de CO₂?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-012",
+      "area": "environment_co2",
+      "area_nombre": "CO₂ y ventilación",
+      "tema": "medicion_co2",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se dispone de concentración registrada de CO₂ y unidades?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-013",
+      "area": "environment_co2",
+      "area_nombre": "CO₂ y ventilación",
+      "tema": "dolor_cabeza",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se reportó cefalea junto a cambios ambientales?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-014",
+      "area": "environment_co2",
+      "area_nombre": "CO₂ y ventilación",
+      "tema": "somnolencia",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se reportó somnolencia o dificultad de concentración?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-015",
+      "area": "environment_co2",
+      "area_nombre": "CO₂ y ventilación",
+      "tema": "estado_ventilacion",
+      "preguntas_relacionadas": [
+        "18",
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Hay registro operativo de ventilación?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_2",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-016",
+      "area": "radiation",
+      "area_nombre": "Radiación espacial",
+      "tema": "alarma_radiacion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Existe una alerta de radiación registrada?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-017",
+      "area": "radiation",
+      "area_nombre": "Radiación espacial",
+      "tema": "dosis_radiacion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se dispone de lectura dosimétrica trazable?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-018",
+      "area": "radiation",
+      "area_nombre": "Radiación espacial",
+      "tema": "evento_radiacion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Está documentado un posible evento de exposición?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-019",
+      "area": "radiation",
+      "area_nombre": "Radiación espacial",
+      "tema": "cronologia_radiacion",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Cuál es la cronología de alerta y síntomas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-020",
+      "area": "radiation",
+      "area_nombre": "Radiación espacial",
+      "tema": "sin_sintomas",
+      "preguntas_relacionadas": [
+        "25",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se ha evitado descartar exposición solo por ausencia de síntomas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-021",
+      "area": "microgravity",
+      "area_nombre": "Microgravedad y orientación",
+      "tema": "mareo",
+      "preguntas_relacionadas": [
+        "7",
+        "18",
+        "20"
+      ],
+      "pregunta_de_verificacion": "¿Se reportó mareo o desorientación?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-022",
+      "area": "microgravity",
+      "area_nombre": "Microgravedad y orientación",
+      "tema": "equilibrio",
+      "preguntas_relacionadas": [
+        "7",
+        "18",
+        "20"
+      ],
+      "pregunta_de_verificacion": "¿Se reportaron cambios de equilibrio?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-023",
+      "area": "microgravity",
+      "area_nombre": "Microgravedad y orientación",
+      "tema": "coordinacion",
+      "preguntas_relacionadas": [
+        "7",
+        "18",
+        "20"
+      ],
+      "pregunta_de_verificacion": "¿Se informaron dificultades de coordinación?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-024",
+      "area": "microgravity",
+      "area_nombre": "Microgravedad y orientación",
+      "tema": "ejercicio_gravedad",
+      "preguntas_relacionadas": [
+        "7",
+        "18",
+        "20"
+      ],
+      "pregunta_de_verificacion": "¿Existe registro del ejercicio efectuado?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-025",
+      "area": "microgravity",
+      "area_nombre": "Microgravedad y orientación",
+      "tema": "adaptacion",
+      "preguntas_relacionadas": [
+        "7",
+        "18",
+        "20"
+      ],
+      "pregunta_de_verificacion": "¿Se dispone de una línea base individual para comparar?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-026",
+      "area": "cardiovascular",
+      "area_nombre": "Salud cardiovascular",
+      "tema": "pecho",
+      "preguntas_relacionadas": [
+        "9",
+        "10",
+        "12",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se han descrito molestias torácicas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-027",
+      "area": "cardiovascular",
+      "area_nombre": "Salud cardiovascular",
+      "tema": "palpitaciones",
+      "preguntas_relacionadas": [
+        "9",
+        "10",
+        "12",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se han descrito palpitaciones?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-028",
+      "area": "cardiovascular",
+      "area_nombre": "Salud cardiovascular",
+      "tema": "cambios_posturales",
+      "preguntas_relacionadas": [
+        "9",
+        "10",
+        "12",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Se describen molestias asociadas a cambios posturales?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-029",
+      "area": "cardiovascular",
+      "area_nombre": "Salud cardiovascular",
+      "tema": "frecuencia",
+      "preguntas_relacionadas": [
+        "9",
+        "10",
+        "12",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Existe frecuencia cardiaca medida con fecha y equipo?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-030",
+      "area": "cardiovascular",
+      "area_nombre": "Salud cardiovascular",
+      "tema": "comparacion_base",
+      "preguntas_relacionadas": [
+        "9",
+        "10",
+        "12",
+        "27"
+      ],
+      "pregunta_de_verificacion": "¿Existen registros previos comparables?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-031",
+      "area": "nutrition_hydration",
+      "area_nombre": "Nutrición e hidratación",
+      "tema": "ingesta",
+      "preguntas_relacionadas": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "pregunta_de_verificacion": "¿Se completó la ingesta programada?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-032",
+      "area": "nutrition_hydration",
+      "area_nombre": "Nutrición e hidratación",
+      "tema": "liquidos",
+      "preguntas_relacionadas": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "pregunta_de_verificacion": "¿Se conoce cantidad de líquidos y periodo?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-033",
+      "area": "nutrition_hydration",
+      "area_nombre": "Nutrición e hidratación",
+      "tema": "orina",
+      "preguntas_relacionadas": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "pregunta_de_verificacion": "¿Se informó un cambio urinario nuevo?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-034",
+      "area": "nutrition_hydration",
+      "area_nombre": "Nutrición e hidratación",
+      "tema": "digestivo",
+      "preguntas_relacionadas": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "pregunta_de_verificacion": "¿Se documentaron molestias gastrointestinales?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-035",
+      "area": "nutrition_hydration",
+      "area_nombre": "Nutrición e hidratación",
+      "tema": "balance",
+      "preguntas_relacionadas": [
+        "21",
+        "22",
+        "23",
+        "24"
+      ],
+      "pregunta_de_verificacion": "¿Existen mediciones o seguimiento longitudinal?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-036",
+      "area": "sleep_fatigue",
+      "area_nombre": "Sueño y fatiga",
+      "tema": "sueno",
+      "preguntas_relacionadas": [
+        "28",
+        "29",
+        "30"
+      ],
+      "pregunta_de_verificacion": "¿Cuánto se durmió y cuál era la rutina prevista?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-037",
+      "area": "sleep_fatigue",
+      "area_nombre": "Sueño y fatiga",
+      "tema": "turnos",
+      "preguntas_relacionadas": [
+        "28",
+        "29",
+        "30"
+      ],
+      "pregunta_de_verificacion": "¿Hubo cambios de turno o tareas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-038",
+      "area": "sleep_fatigue",
+      "area_nombre": "Sueño y fatiga",
+      "tema": "fatiga",
+      "preguntas_relacionadas": [
+        "28",
+        "29",
+        "30"
+      ],
+      "pregunta_de_verificacion": "¿Cuál fue el nivel de fatiga informado?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-039",
+      "area": "sleep_fatigue",
+      "area_nombre": "Sueño y fatiga",
+      "tema": "duracion_fatiga",
+      "preguntas_relacionadas": [
+        "28",
+        "29",
+        "30"
+      ],
+      "pregunta_de_verificacion": "¿Es persistente respecto a controles previos?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-040",
+      "area": "sleep_fatigue",
+      "area_nombre": "Sueño y fatiga",
+      "tema": "rendimiento",
+      "preguntas_relacionadas": [
+        "28",
+        "29",
+        "30"
+      ],
+      "pregunta_de_verificacion": "¿Se reportó impacto sobre el desempeño?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-041",
+      "area": "behavioral_health",
+      "area_nombre": "Bienestar psicológico",
+      "tema": "animo",
+      "preguntas_relacionadas": [
+        "31",
+        "32",
+        "33"
+      ],
+      "pregunta_de_verificacion": "¿Se describió un cambio en el estado de ánimo?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-042",
+      "area": "behavioral_health",
+      "area_nombre": "Bienestar psicológico",
+      "tema": "estres",
+      "preguntas_relacionadas": [
+        "31",
+        "32",
+        "33"
+      ],
+      "pregunta_de_verificacion": "¿Cuál fue el estrés percibido?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-043",
+      "area": "behavioral_health",
+      "area_nombre": "Bienestar psicológico",
+      "tema": "apoyo",
+      "preguntas_relacionadas": [
+        "31",
+        "32",
+        "33"
+      ],
+      "pregunta_de_verificacion": "¿Se pidió apoyo privado o profesional?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-044",
+      "area": "behavioral_health",
+      "area_nombre": "Bienestar psicológico",
+      "tema": "contexto",
+      "preguntas_relacionadas": [
+        "31",
+        "32",
+        "33"
+      ],
+      "pregunta_de_verificacion": "¿Hay factores de trabajo o descanso relevantes?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-045",
+      "area": "behavioral_health",
+      "area_nombre": "Bienestar psicológico",
+      "tema": "comparacion_psico",
+      "preguntas_relacionadas": [
+        "31",
+        "32",
+        "33"
+      ],
+      "pregunta_de_verificacion": "¿Existe una línea base individual disponible?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-046",
+      "area": "medical_history",
+      "area_nombre": "Historial clínico y medicamentos",
+      "tema": "alergia",
+      "preguntas_relacionadas": [
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "pregunta_de_verificacion": "¿Se informó una alergia o reacción nueva?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-047",
+      "area": "medical_history",
+      "area_nombre": "Historial clínico y medicamentos",
+      "tema": "farmacos",
+      "preguntas_relacionadas": [
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "pregunta_de_verificacion": "¿Se documentaron fármacos o suplementos recientes?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-048",
+      "area": "medical_history",
+      "area_nombre": "Historial clínico y medicamentos",
+      "tema": "dosis",
+      "preguntas_relacionadas": [
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "pregunta_de_verificacion": "¿Se modificó una indicación médica registrada?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-049",
+      "area": "medical_history",
+      "area_nombre": "Historial clínico y medicamentos",
+      "tema": "antecedentes",
+      "preguntas_relacionadas": [
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "pregunta_de_verificacion": "¿Qué antecedentes están registrados y cuáles son actuales?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    },
+    {
+      "id": "NASA-KB-050",
+      "area": "medical_history",
+      "area_nombre": "Historial clínico y medicamentos",
+      "tema": "restricciones",
+      "preguntas_relacionadas": [
+        "11",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "pregunta_de_verificacion": "¿Existen restricciones de actividad actualizadas?",
+      "tipo": "lista_verificacion_de_datos",
+      "fuente_contextual": "https://standards.nasa.gov/standard/NASA/NASA-STD-3001_VOL_1",
+      "afirmacion_clinica_validada": false,
+      "revisado_por_especialista": false
+    }
+  ]
+}

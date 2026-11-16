@@ -1,0 +1,6 @@
+.nasa-app-shell{background:linear-gradient(135deg,#edf4fb,#dfeef9);min-height:100vh}
+.nasa-app-shell .topbar{border-bottom:2px solid #0b3d91}
+.nasa-app-shell .topbar h1{color:#0b3d91;font-size:clamp(1.0rem,2.4vw,1.55rem);overflow-wrap:anywhere}
+.nasa-app-shell .eyebrow{color:#0b3d91}
+.nasa-app-shell .login-card{border-top:3px solid #0b3d91}
+.nasa-app-shell .login-card button[type=submit]{background:#0b3d91;color:#fff}

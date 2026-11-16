@@ -1,0 +1,2031 @@
+{
+  "schemaVersion": "cube-checkia-nasa-v2-50",
+  "title": "CUBE — CHECK_IA NASA | Cuestionario 50 preguntas",
+  "scope": "Solo interior de nave; investigación/simulación, no sistema de vuelo certificado",
+  "language": "es-MX",
+  "mode": "nasa",
+  "questionCount": 50,
+  "branchCount": 3,
+  "questions": [
+    {
+      "id": "1",
+      "order": 1,
+      "text": "¿Quién responde y quién necesita la evaluación?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Yo; 2. Respondo por otro tripulante. Identificador del tripulante: texto libre o perfil registrado.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yo"
+        },
+        {
+          "value": "2",
+          "label": "Respondo por otro tripulante"
+        }
+      ],
+      "followups": [],
+      "unknownDistinctFromNo": true,
+      "insertAfter": [
+        "1.1"
+      ]
+    },
+    {
+      "id": "2",
+      "order": 2,
+      "text": "¿Cuál es el motivo de esta revisión?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Revisión diaria; 2. Síntoma nuevo; 3. Seguimiento de una molestia; 4. Alarma de un equipo o de la nave; 5. Otro. Descripción libre opcional; solicitarla si selecciona 2–5.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Revisión diaria"
+        },
+        {
+          "value": "2",
+          "label": "Síntoma nuevo"
+        },
+        {
+          "value": "3",
+          "label": "Seguimiento de una molestia"
+        },
+        {
+          "value": "4",
+          "label": "Alarma de un equipo o de la nave"
+        },
+        {
+          "value": "5",
+          "label": "Otro"
+        }
+      ],
+      "insertAfter": [
+        "2.1",
+        "2.1.1"
+      ],
+      "followups": [
+        {
+          "key": "reason_detail",
+          "text": "Describe el motivo de esta revisión",
+          "type": "text",
+          "whenAnswer": "2,3,4,5"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "3",
+      "order": 3,
+      "text": "¿Has experimentado una caída repentina de presión, una alarma de despresurización o una posible fuga de aire en la nave?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No estoy seguro"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "order": 4,
+      "text": "¿Cuál es tu peso o masa corporal actual (kg) y tu estatura registrada (cm)?",
+      "type": "number",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "followups": [
+        {
+          "key": "height_cm",
+          "text": "Estatura registrada (cm)",
+          "type": "number",
+          "whenAnswer": "any"
+        }
+      ],
+      "unit": "kg",
+      "sourceFormatAndFollowup": "Masa numérica en kilogramos entre 40 y 100 inclusive (se aceptan decimales); registrar también estatura en cm.",
+      "profileReusable": true
+    },
+    {
+      "id": "5",
+      "order": 5,
+      "text": "¿Tienes una medición reciente y verificable de tu masa corporal?",
+      "type": "yes_no",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "mass_date",
+          "text": "Fecha y equipo de medición",
+          "type": "text",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "mass_kg",
+          "text": "Masa medida (kg)",
+          "type": "number",
+          "whenAnswer": "yes"
+        }
+      ],
+      "info": "El IMC se calculará únicamente con masa y estatura numéricas válidas; en microgravedad no sustituye una valoración médica."
+    },
+    {
+      "id": "6",
+      "order": 6,
+      "text": "¿Has presentado dolor intenso de oído, dificultad respiratoria, mareo, confusión o cambios repentinos en tu estado físico después de una alteración de presión?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No estoy seguro"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "order": 7,
+      "text": "¿Se ha registrado alguna alerta de radiación elevada o una exposición superior a los límites operativos establecidos para tu misión?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No tengo acceso a los datos"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "order": 8,
+      "text": "Después de una posible exposición a radiación, ¿has presentado náuseas, vómitos, debilidad inusual o malestar general?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No hubo una alerta de radiación"
+        },
+        {
+          "value": "4",
+          "label": "No sé"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "order": 9,
+      "text": "¿Has experimentado mareos, desorientación, náuseas o dificultades para coordinar tus movimientos en condiciones de microgravedad?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Nunca"
+        },
+        {
+          "value": "2",
+          "label": "Ocasionalmente"
+        },
+        {
+          "value": "3",
+          "label": "Frecuentemente"
+        },
+        {
+          "value": "4",
+          "label": "Constantemente"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "order": 10,
+      "text": "¿Qué estabas haciendo antes de iniciar esta revisión o de notar la molestia?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Descansando; 2. Durmiendo; 3. Ejercicio; 4. Trabajo; 5. Comiendo; 6. Otra actividad. Detalle libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Descansando"
+        },
+        {
+          "value": "2",
+          "label": "Durmiendo"
+        },
+        {
+          "value": "3",
+          "label": "Ejercicio"
+        },
+        {
+          "value": "4",
+          "label": "Trabajo"
+        },
+        {
+          "value": "5",
+          "label": "Comiendo"
+        },
+        {
+          "value": "6",
+          "label": "Otra actividad"
+        }
+      ],
+      "followups": [
+        {
+          "key": "activity_detail",
+          "text": "Detalle de la actividad",
+          "type": "text",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "11",
+      "order": 11,
+      "text": "¿Has notado una disminución de fuerza muscular, dificultad para realizar ejercicios o cambios en tu capacidad física durante la misión?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No he notado cambios"
+        },
+        {
+          "value": "2",
+          "label": "Disminución leve"
+        },
+        {
+          "value": "3",
+          "label": "Disminución moderada"
+        },
+        {
+          "value": "4",
+          "label": "Disminución importante"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "order": 12,
+      "text": "¿Se ha activado alguna alarma relacionada con el oxígeno o has experimentado dificultad para respirar, dolor de cabeza intenso o confusión?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No estoy seguro"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "order": 13,
+      "text": "¿Se ha detectado un nivel elevado de CO₂ o has presentado dolor de cabeza, somnolencia, mareos o dificultad para concentrarte?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí, existe una alerta ambiental"
+        },
+        {
+          "value": "2",
+          "label": "Tengo síntomas, pero no hay alerta registrada"
+        },
+        {
+          "value": "3",
+          "label": "No he presentado síntomas ni alertas"
+        },
+        {
+          "value": "4",
+          "label": "No dispongo de mediciones"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "order": 14,
+      "text": "¿Has experimentado palpitaciones, sensación de desmayo, mareo al cambiar de posición o alteraciones inusuales de tu frecuencia cardíaca?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Nunca"
+        },
+        {
+          "value": "2",
+          "label": "Ocasionalmente"
+        },
+        {
+          "value": "3",
+          "label": "Frecuentemente"
+        },
+        {
+          "value": "4",
+          "label": "Actualmente presento síntomas"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "order": 15,
+      "text": "¿Cuándo comenzó el síntoma o incidente?",
+      "type": "datetime_or_text",
+      "sourceFormatAndFollowup": "Fecha/hora o descripción libre, por ejemplo “hace 20 minutos”. Incluir “No tengo síntomas” y “No sé”. Conservar la expresión original si la hora es aproximada.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "specialOptions": [
+        {
+          "value": "no_symptoms",
+          "label": "No tengo síntomas"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "preserveOriginalTimeExpression": true,
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "16",
+      "order": 16,
+      "text": "¿En qué parte del cuerpo notas la molestia?",
+      "type": "multi_select",
+      "sourceFormatAndFollowup": "Selección múltiple: 1. Cabeza; 2. Ojos; 3. Pecho; 4. Abdomen; 5. Espalda; 6. Brazos/manos; 7. Piernas/pies; 8. Piel; 9. Otra; 10. Ninguna. Descripción libre complementaria.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Cabeza"
+        },
+        {
+          "value": "2",
+          "label": "Ojos"
+        },
+        {
+          "value": "3",
+          "label": "Pecho"
+        },
+        {
+          "value": "4",
+          "label": "Abdomen"
+        },
+        {
+          "value": "5",
+          "label": "Espalda"
+        },
+        {
+          "value": "6",
+          "label": "Brazos/manos"
+        },
+        {
+          "value": "7",
+          "label": "Piernas/pies"
+        },
+        {
+          "value": "8",
+          "label": "Piel"
+        },
+        {
+          "value": "9",
+          "label": "Otra"
+        },
+        {
+          "value": "10",
+          "label": "Ninguna"
+        }
+      ],
+      "exclusiveOptions": [
+        "10"
+      ],
+      "followups": [
+        {
+          "key": "body_area_detail",
+          "text": "Descripción de la molestia",
+          "type": "text",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "17",
+      "order": 17,
+      "text": "Si tienes dolor, ¿qué intensidad tiene ahora?",
+      "type": "scale",
+      "sourceFormatAndFollowup": "Escala 1–10: 1 = mínimo; 10 = máximo imaginable. Opción separada “Sin dolor”. No usar esta escala como gravedad general.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "scale": {
+        "min": 1,
+        "max": 10,
+        "minLabel": "mínimo",
+        "maxLabel": "máximo imaginable"
+      },
+      "specialOptions": [
+        {
+          "value": "none",
+          "label": "Sin dolor"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "18",
+      "order": 18,
+      "text": "¿Has tenido algo similar anteriormente?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: cuándo ocurrió y qué evaluación recibiste, en texto libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "prior_episode",
+          "text": "Cuándo ocurrió y qué evaluación recibió",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "19",
+      "order": 19,
+      "text": "¿Cómo ha cambiado la molestia desde que comenzó?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Mejoró; 2. Sigue igual; 3. Empeoró; 4. Aparece y desaparece; 5. Desapareció; 6. No aplica. Detalle libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Mejoró"
+        },
+        {
+          "value": "2",
+          "label": "Sigue igual"
+        },
+        {
+          "value": "3",
+          "label": "Empeoró"
+        },
+        {
+          "value": "4",
+          "label": "Aparece y desaparece"
+        },
+        {
+          "value": "5",
+          "label": "Desapareció"
+        },
+        {
+          "value": "6",
+          "label": "No aplica"
+        }
+      ],
+      "followups": [
+        {
+          "key": "symptom_change_detail",
+          "text": "Detalle del cambio",
+          "type": "text",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "20",
+      "order": 20,
+      "text": "¿Tomaste medicamentos, vitaminas o suplementos desde el último registro?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: nombre, cantidad/dosis, unidad y hora, en campos libres separados.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "substance_name",
+          "text": "Medicamento, vitamina o suplemento",
+          "type": "text",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "dose_amount",
+          "text": "Cantidad o dosis",
+          "type": "number",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "dose_unit",
+          "text": "Unidad",
+          "type": "text",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "dose_time",
+          "text": "Hora",
+          "type": "datetime_or_text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "21",
+      "order": 21,
+      "text": "¿Cambiaste u omitiste alguna dosis del tratamiento que tienes indicado?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Sí/No/No tengo tratamiento. Si sí: cuál, cuándo y motivo, en texto libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No tengo tratamiento"
+        }
+      ],
+      "followups": [
+        {
+          "key": "changed_treatment",
+          "text": "Cuál tratamiento",
+          "type": "text",
+          "whenAnswer": "1"
+        },
+        {
+          "key": "change_time",
+          "text": "Cuándo",
+          "type": "datetime_or_text",
+          "whenAnswer": "1"
+        },
+        {
+          "key": "change_reason",
+          "text": "Motivo",
+          "type": "text",
+          "whenAnswer": "1"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "22",
+      "order": 22,
+      "text": "¿Cómo describirías tu adaptación general a la microgravedad?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Buena"
+        },
+        {
+          "value": "2",
+          "label": "Regular"
+        },
+        {
+          "value": "3",
+          "label": "Mala"
+        },
+        {
+          "value": "4",
+          "label": "Todavía me estoy adaptando"
+        }
+      ],
+      "followups": [
+        {
+          "key": "microgravity_detail",
+          "text": "Describe las dificultades de adaptación",
+          "type": "text",
+          "whenAnswer": "2,3,4"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "order": 23,
+      "text": "¿Se ha manifestado alguna condición médica registrada en tu expediente?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: texto libre o confirmación del perfil. No pedir que el astronauta se autodiagnostique.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "profileField": "conditions",
+      "followups": [
+        {
+          "key": "condition_detail",
+          "text": "Condición médica o referencia al perfil",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "24",
+      "order": 24,
+      "text": "¿Cambió alguna indicación médica o restricción de actividad desde la última revisión?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: indicación, fecha y quién la emitió, en texto libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "changed_instruction",
+          "text": "Indicación",
+          "type": "text",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "instruction_date",
+          "text": "Fecha",
+          "type": "date",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "instruction_by",
+          "text": "Quién la emitió",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "25",
+      "order": 25,
+      "text": "¿Has notado cambios en visión, equilibrio, concentración o sensibilidad?",
+      "type": "multi_select",
+      "sourceFormatAndFollowup": "Selección múltiple: 1. Visión; 2. Equilibrio; 3. Concentración/memoria; 4. Hormigueo/adormecimiento; 5. Otro; 6. Ninguno. Preguntar inicio y descripción si corresponde.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Visión"
+        },
+        {
+          "value": "2",
+          "label": "Equilibrio"
+        },
+        {
+          "value": "3",
+          "label": "Concentración/memoria"
+        },
+        {
+          "value": "4",
+          "label": "Hormigueo/adormecimiento"
+        },
+        {
+          "value": "5",
+          "label": "Otro"
+        },
+        {
+          "value": "6",
+          "label": "Ninguno"
+        }
+      ],
+      "exclusiveOptions": [
+        "6"
+      ],
+      "followups": [
+        {
+          "key": "change_onset",
+          "text": "Inicio",
+          "type": "datetime_or_text",
+          "whenAnswer": "1,2,3,4,5"
+        },
+        {
+          "key": "change_description",
+          "text": "Descripción",
+          "type": "text",
+          "whenAnswer": "1,2,3,4,5"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "26",
+      "order": 26,
+      "text": "¿Tienes alguna otra molestia que todavía no hayas mencionado?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: texto libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "other_symptoms",
+          "text": "Otra molestia",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "27",
+      "order": 27,
+      "text": "¿Realizaste el ejercicio programado desde el último registro?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Completo; 2. Parcial; 3. No realizado; 4. No estaba programado. Tipo, minutos, carga y molestias: campos libres cuando corresponda.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Completo"
+        },
+        {
+          "value": "2",
+          "label": "Parcial"
+        },
+        {
+          "value": "3",
+          "label": "No realizado"
+        },
+        {
+          "value": "4",
+          "label": "No estaba programado"
+        }
+      ],
+      "followups": [
+        {
+          "key": "exercise_type",
+          "text": "Tipo",
+          "type": "text",
+          "whenAnswer": "1,2,3"
+        },
+        {
+          "key": "exercise_minutes",
+          "text": "Minutos",
+          "type": "number",
+          "whenAnswer": "1,2,3"
+        },
+        {
+          "key": "exercise_load",
+          "text": "Carga",
+          "type": "text",
+          "whenAnswer": "1,2,3"
+        },
+        {
+          "key": "exercise_discomfort",
+          "text": "Molestias",
+          "type": "text",
+          "whenAnswer": "1,2,3"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "28",
+      "order": 28,
+      "text": "¿Completaste tu alimentación programada?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Completa; 2. Parcial; 3. No comí; 4. No tengo el registro. Describir alimentos o cantidades omitidas y motivo.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Completa"
+        },
+        {
+          "value": "2",
+          "label": "Parcial"
+        },
+        {
+          "value": "3",
+          "label": "No comí"
+        },
+        {
+          "value": "4",
+          "label": "No tengo el registro"
+        }
+      ],
+      "followups": [
+        {
+          "key": "food_detail",
+          "text": "Alimentos o cantidades omitidas",
+          "type": "text",
+          "whenAnswer": "2,3"
+        },
+        {
+          "key": "food_reason",
+          "text": "Motivo",
+          "type": "text",
+          "whenAnswer": "2,3"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "29",
+      "order": 29,
+      "text": "¿Cuánto líquido bebiste desde el último registro?",
+      "type": "quantity",
+      "sourceFormatAndFollowup": "Número libre en mL o L, con unidad obligatoria. Indicar “Medido”, “Estimado” o “No sé”.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "units": [
+        "mL",
+        "L"
+      ],
+      "measurementStatusOptions": [
+        "Medido",
+        "Estimado",
+        "No sé"
+      ],
+      "unitRequiredWhenNumeric": true,
+      "followups": [
+        {
+          "key": "intake_quality",
+          "text": "Calidad del dato: medido, estimado o no sé",
+          "type": "single_select",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "30",
+      "order": 30,
+      "text": "¿Notaste cambios al orinar?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: selección múltiple de menor/mayor frecuencia, menor/mayor cantidad, dolor, cambio de aspecto u otro; descripción libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "urinary_changes",
+          "text": "Cambios observados: frecuencia, cantidad, dolor, aspecto u otro",
+          "type": "multi_select",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "urinary_detail",
+          "text": "Descripción",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "31",
+      "order": 31,
+      "text": "¿Evacuaste desde el último registro y hubo alguna molestia?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Sí, sin molestias; 2. Sí, con molestias; 3. No; 4. No recuerdo. Si corresponde: descripción libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí, sin molestias"
+        },
+        {
+          "value": "2",
+          "label": "Sí, con molestias"
+        },
+        {
+          "value": "3",
+          "label": "No"
+        },
+        {
+          "value": "4",
+          "label": "No recuerdo"
+        }
+      ],
+      "followups": [
+        {
+          "key": "stool_detail",
+          "text": "Descripción de la molestia",
+          "type": "text",
+          "whenAnswer": "2"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "32",
+      "order": 32,
+      "text": "¿Ocurrió algún incidente ambiental desde la última revisión?",
+      "type": "multi_select",
+      "sourceFormatAndFollowup": "Selección múltiple: 1. Alarma de presión; 2. Oxígeno; 3. CO₂; 4. Humo/incendio; 5. Derrame/contaminante; 6. Temperatura; 7. Aviso de radiación; 8. Otro; 9. Ninguno; 10. No sé. Registrar hora y si sigue activo.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Alarma de presión"
+        },
+        {
+          "value": "2",
+          "label": "Oxígeno"
+        },
+        {
+          "value": "3",
+          "label": "CO₂"
+        },
+        {
+          "value": "4",
+          "label": "Humo/incendio"
+        },
+        {
+          "value": "5",
+          "label": "Derrame/contaminante"
+        },
+        {
+          "value": "6",
+          "label": "Temperatura"
+        },
+        {
+          "value": "7",
+          "label": "Aviso de radiación"
+        },
+        {
+          "value": "8",
+          "label": "Otro"
+        },
+        {
+          "value": "9",
+          "label": "Ninguno"
+        },
+        {
+          "value": "10",
+          "label": "No sé"
+        }
+      ],
+      "exclusiveOptions": [
+        "9",
+        "10"
+      ],
+      "urgentIfIncidentActive": true,
+      "followups": [
+        {
+          "key": "incident_time",
+          "text": "Hora del incidente",
+          "type": "datetime_or_text",
+          "whenAnswer": "1,2,3,4,5,6,7,8"
+        },
+        {
+          "key": "incident_active",
+          "text": "¿Sigue activo?",
+          "type": "yes_no",
+          "whenAnswer": "1,2,3,4,5,6,7,8"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "33",
+      "order": 33,
+      "text": "¿Recibiste una evaluación del responsable médico desde el último registro?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: fecha, indicaciones y seguimiento pendiente, en texto libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "medical_review_date",
+          "text": "Fecha",
+          "type": "date",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "medical_guidance",
+          "text": "Indicaciones",
+          "type": "text",
+          "whenAnswer": "yes"
+        },
+        {
+          "key": "medical_followup",
+          "text": "Seguimiento pendiente",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "34",
+      "order": 34,
+      "text": "¿Tienes mediciones o análisis nuevos pendientes de incorporar a CUBE CHECK_IA NASA?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Sí/No/No sé. Si sí: elegir los disponibles y registrar valor, unidad, hora y equipo, o importar el archivo. Mostrar lo ya importado para evitar repetirlo.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí"
+        },
+        {
+          "value": "2",
+          "label": "No"
+        },
+        {
+          "value": "3",
+          "label": "No sé"
+        }
+      ],
+      "noDuplicateImports": true,
+      "followups": [
+        {
+          "key": "measurements",
+          "text": "Mediciones: valor, unidad, hora, equipo y calidad",
+          "type": "measurement_array",
+          "whenAnswer": "1"
+        },
+        {
+          "key": "attachment_ref",
+          "text": "Archivo importado (referencia; no contenido incrustado)",
+          "type": "file_reference",
+          "whenAnswer": "1"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "35",
+      "order": 35,
+      "text": "¿Cuánto dormiste en tu último periodo de descanso?",
+      "type": "duration",
+      "sourceFormatAndFollowup": "Número libre en horas y minutos. Subpreguntas: número de interrupciones y descanso percibido del 1 al 10, donde 1 = nada descansado y 10 = completamente descansado.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "units": [
+        "horas",
+        "minutos"
+      ],
+      "scaleRestQuality": {
+        "min": 1,
+        "max": 10,
+        "minLabel": "nada descansado",
+        "maxLabel": "completamente descansado"
+      },
+      "followups": [
+        {
+          "key": "sleep_interruptions",
+          "text": "Número de interrupciones",
+          "type": "integer",
+          "whenAnswer": "any"
+        },
+        {
+          "key": "rest_quality",
+          "text": "Descanso percibido: 1 nada descansado, 10 completamente descansado",
+          "type": "scale",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "36",
+      "order": 36,
+      "text": "¿Cuánto tiempo trabajaste desde el último registro y qué tareas realizaste?",
+      "type": "duration",
+      "sourceFormatAndFollowup": "Duración numérica y descripción libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "units": [
+        "horas",
+        "minutos"
+      ],
+      "followups": [
+        {
+          "key": "tasks_detail",
+          "text": "Tareas realizadas",
+          "type": "text",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "37",
+      "order": 37,
+      "text": "¿Qué nivel de fatiga sientes ahora?",
+      "type": "scale",
+      "sourceFormatAndFollowup": "Escala 1–10: 1 = mínima; 10 = máxima imaginable. Opción “Sin fatiga”. Preguntar si dificulta alguna tarea: Sí/No y detalle libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "scale": {
+        "min": 1,
+        "max": 10,
+        "minLabel": "mínima",
+        "maxLabel": "máxima imaginable"
+      },
+      "specialOptions": [
+        {
+          "value": "none",
+          "label": "Sin fatiga"
+        }
+      ],
+      "followups": [
+        {
+          "key": "fatigue_impacts_task",
+          "text": "¿Dificulta alguna tarea?",
+          "type": "yes_no",
+          "whenAnswer": "any"
+        },
+        {
+          "key": "fatigue_impact_detail",
+          "text": "Detalle de dificultad",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "38",
+      "order": 38,
+      "text": "¿Cómo describirías tu estado de ánimo?",
+      "type": "multi_select",
+      "sourceFormatAndFollowup": "Selección múltiple: 1. Tranquilo; 2. Animado; 3. Triste; 4. Preocupado; 5. Irritable; 6. Desmotivado; 7. Otro. Texto libre opcional.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Tranquilo"
+        },
+        {
+          "value": "2",
+          "label": "Animado"
+        },
+        {
+          "value": "3",
+          "label": "Triste"
+        },
+        {
+          "value": "4",
+          "label": "Preocupado"
+        },
+        {
+          "value": "5",
+          "label": "Irritable"
+        },
+        {
+          "value": "6",
+          "label": "Desmotivado"
+        },
+        {
+          "value": "7",
+          "label": "Otro"
+        }
+      ],
+      "followups": [
+        {
+          "key": "mood_detail",
+          "text": "Detalle opcional",
+          "type": "text",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "39",
+      "order": 39,
+      "text": "¿Qué nivel de presión mental (salud mental) tienes ahora?",
+      "type": "scale",
+      "sourceFormatAndFollowup": "Escala 1–10: 1 = mínimo; 10 = máximo imaginable. Opción “Sin estrés”. Motivo libre opcional.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "scale": {
+        "min": 1,
+        "max": 10,
+        "minLabel": "mínimo",
+        "maxLabel": "máximo imaginable"
+      },
+      "specialOptions": [
+        {
+          "value": "none",
+          "label": "Sin presión mental"
+        }
+      ],
+      "followups": [
+        {
+          "key": "stress_reason",
+          "text": "Motivo opcional",
+          "type": "text",
+          "whenAnswer": "any"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "40",
+      "order": 40,
+      "text": "¿Se ha realizado una lectura o revisión de tu dosímetro personal de radiación desde el último registro?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí, medición disponible"
+        },
+        {
+          "value": "2",
+          "label": "No se realizó"
+        },
+        {
+          "value": "3",
+          "label": "No sé / no tengo acceso"
+        }
+      ],
+      "followups": [
+        {
+          "key": "dosimeter_value",
+          "text": "Lectura registrada, unidad, dispositivo y hora",
+          "type": "text",
+          "whenAnswer": "1"
+        },
+        {
+          "key": "dosimeter_reason",
+          "text": "Motivo por el que no se realizó o no estuvo disponible",
+          "type": "text",
+          "whenAnswer": "2"
+        }
+      ],
+      "info": "No inferir dosis, gravedad ni exposición a partir de síntomas."
+    },
+    {
+      "id": "41",
+      "order": 41,
+      "text": "¿Has notado cambios en la audición, zumbidos o molestias después de exposición a ruido intenso?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No"
+        },
+        {
+          "value": "2",
+          "label": "Sí, cambios de audición"
+        },
+        {
+          "value": "3",
+          "label": "Sí, zumbidos"
+        },
+        {
+          "value": "4",
+          "label": "Sí, dolor o presión"
+        },
+        {
+          "value": "5",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "hearing_detail",
+          "text": "Indica inicio, actividad y duración",
+          "type": "text",
+          "whenAnswer": "2,3,4"
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "order": 42,
+      "text": "¿Has presentado dolor dental, sangrado de encías o molestias al masticar durante la misión?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No"
+        },
+        {
+          "value": "2",
+          "label": "Dolor dental"
+        },
+        {
+          "value": "3",
+          "label": "Molestias o sangrado de encías"
+        },
+        {
+          "value": "4",
+          "label": "Dificultad al masticar"
+        },
+        {
+          "value": "5",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "oral_detail",
+          "text": "Describe inicio y evolución",
+          "type": "text",
+          "whenAnswer": "2,3,4"
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "order": 43,
+      "text": "¿Has observado heridas, irritación cutánea o lesiones que estén tardando en recuperarse?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No"
+        },
+        {
+          "value": "2",
+          "label": "Herida o lesión nueva"
+        },
+        {
+          "value": "3",
+          "label": "Irritación o sarpullido"
+        },
+        {
+          "value": "4",
+          "label": "Lesión que no mejora"
+        },
+        {
+          "value": "5",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "skin_detail",
+          "text": "Ubicación, fecha y descripción",
+          "type": "text",
+          "whenAnswer": "2,3,4"
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "order": 44,
+      "text": "¿Has presentado fiebre medida, tos nueva, dolor de garganta u otros signos de posible infección?",
+      "type": "multi_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Fiebre medida"
+        },
+        {
+          "value": "2",
+          "label": "Tos nueva"
+        },
+        {
+          "value": "3",
+          "label": "Dolor de garganta"
+        },
+        {
+          "value": "4",
+          "label": "Escalofríos"
+        },
+        {
+          "value": "5",
+          "label": "Ninguno"
+        },
+        {
+          "value": "6",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "infection_detail",
+          "text": "Temperatura medida, hora y otros datos",
+          "type": "text",
+          "whenAnswer": "1,2,3,4"
+        }
+      ],
+      "exclusiveOptions": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "id": "45",
+      "order": 45,
+      "text": "¿Has notado rigidez articular, limitación de movimiento o dolor musculoesquelético distinto de la fatiga general?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No"
+        },
+        {
+          "value": "2",
+          "label": "Rigidez de articulaciones"
+        },
+        {
+          "value": "3",
+          "label": "Limitación de movimiento"
+        },
+        {
+          "value": "4",
+          "label": "Dolor muscular o articular localizado"
+        },
+        {
+          "value": "5",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "mobility_detail",
+          "text": "Región, inicio y tarea afectada",
+          "type": "text",
+          "whenAnswer": "2,3,4"
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "order": 46,
+      "text": "¿Has observado hinchazón inusual de cara, manos o piernas, o cambios en el ajuste del equipo personal?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No"
+        },
+        {
+          "value": "2",
+          "label": "Hinchazón facial"
+        },
+        {
+          "value": "3",
+          "label": "Hinchazón de manos"
+        },
+        {
+          "value": "4",
+          "label": "Hinchazón de piernas"
+        },
+        {
+          "value": "5",
+          "label": "Cambios en ajuste del equipo"
+        },
+        {
+          "value": "6",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "fluid_shift_detail",
+          "text": "Describe el cambio y cuándo inició",
+          "type": "text",
+          "whenAnswer": "2,3,4,5"
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "order": 47,
+      "text": "¿Has tenido dificultades nuevas para realizar movimientos finos con las manos o manipular herramientas?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "No"
+        },
+        {
+          "value": "2",
+          "label": "Dificultad ocasional"
+        },
+        {
+          "value": "3",
+          "label": "Dificultad frecuente"
+        },
+        {
+          "value": "4",
+          "label": "Imposibilidad para una tarea habitual"
+        },
+        {
+          "value": "5",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "dexterity_detail",
+          "text": "Herramienta o tarea afectada y momento",
+          "type": "text",
+          "whenAnswer": "2,3,4"
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "order": 48,
+      "text": "¿Se encuentra disponible y operativo el equipo de medición o atención médica requerido para esta evaluación?",
+      "type": "single_select",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "unknownDistinctFromNo": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Sí, todo disponible"
+        },
+        {
+          "value": "2",
+          "label": "Falta equipo o material"
+        },
+        {
+          "value": "3",
+          "label": "Hay equipo con fallas"
+        },
+        {
+          "value": "4",
+          "label": "No he verificado"
+        }
+      ],
+      "followups": [
+        {
+          "key": "equipment_detail",
+          "text": "Equipo o material afectado",
+          "type": "text",
+          "whenAnswer": "2,3"
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "order": 49,
+      "text": "¿Hay algo más que quieras registrar o corregir?",
+      "type": "yes_no",
+      "sourceFormatAndFollowup": "Sí/No. Si sí: texto libre.",
+      "required": true,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Sí"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        },
+        {
+          "value": "unknown",
+          "label": "No sé"
+        }
+      ],
+      "followups": [
+        {
+          "key": "correction_detail",
+          "text": "Registro o corrección",
+          "type": "text",
+          "whenAnswer": "yes"
+        }
+      ],
+      "unknownDistinctFromNo": true
+    },
+    {
+      "id": "50",
+      "order": 50,
+      "text": "¿Confirmas que el resumen representa lo que respondiste?",
+      "type": "single_select",
+      "sourceFormatAndFollowup": "Selección única: 1. Confirmar y guardar; 2. Corregir respuestas; 3. Guardar como incompleto.",
+      "required": false,
+      "allowUnanswered": true,
+      "answerProvenance": "declared",
+      "options": [
+        {
+          "value": "1",
+          "label": "Confirmar y guardar"
+        },
+        {
+          "value": "2",
+          "label": "Corregir respuestas"
+        },
+        {
+          "value": "3",
+          "label": "Guardar como incompleto"
+        }
+      ],
+      "actions": {
+        "1": "confirm_and_save",
+        "2": "edit_answers",
+        "3": "save_incomplete"
+      },
+      "unknownDistinctFromNo": true
+    }
+  ],
+  "branches": [
+    {
+      "id": "1.1",
+      "afterQuestion": "1",
+      "text": "¿Cuál es el nombre o ID del astronauta que necesita la evaluación?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "AST-001",
+          "label": "Mark — AST-001"
+        },
+        {
+          "value": "AST-002",
+          "label": "Mary — AST-002"
+        },
+        {
+          "value": "AST-003",
+          "label": "John — AST-003"
+        },
+        {
+          "value": "AST-004",
+          "label": "Mike — AST-004"
+        },
+        {
+          "value": "AST-005",
+          "label": "Eva — AST-005"
+        }
+      ],
+      "required": true,
+      "profileSource": "nasa-crew-profiles.json"
+    },
+    {
+      "id": "2.1",
+      "afterQuestion": "2",
+      "text": "Del 1 al 10, ¿qué tan urgente consideras que necesitas asistencia ahora?",
+      "type": "scale",
+      "scale": {
+        "min": 1,
+        "max": 10,
+        "minLabel": "urgencia mínima percibida",
+        "maxLabel": "necesito asistencia inmediata"
+      },
+      "routing": {
+        "8": "show_2.1.1",
+        "9-10": "pause_and_open_assistance",
+        "immediate_help": "pause_and_open_assistance",
+        "unable_to_assess": "show_2.1.1",
+        "1-7": "show_2.1.1"
+      },
+      "note": "La urgencia autopercibida nunca descarta emergencias",
+      "sourceFormatAndFollowup": "Escala única 1–10, sin activar una emergencia únicamente por el valor marcado. La detección de riesgos específicos se realiza en 2.1.1."
+    },
+    {
+      "id": "2.1.1",
+      "afterQuestion": "2.1",
+      "text": "¿Presentas u observas alguna de estas situaciones en este momento?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Pérdida inesperada de presión o alarma activa de despresurización.",
+          "route": "cabin_pressure"
+        },
+        {
+          "value": "2",
+          "label": "Alarma de oxígeno o dificultad intensa para respirar.",
+          "route": "oxygen_or_breathing"
+        },
+        {
+          "value": "3",
+          "label": "Alarma de CO₂, humo, incendio o posible contaminante.",
+          "route": "environmental_hazard"
+        },
+        {
+          "value": "4",
+          "label": "Un compañero está inconsciente y no respira normalmente o solamente jadea.",
+          "route": "unresponsive_crew"
+        },
+        {
+          "value": "5",
+          "label": "Dolor o presión en el pecho, o palpitaciones acompañadas de desmayo o dificultad respiratoria.",
+          "route": "cardiovascular"
+        },
+        {
+          "value": "6",
+          "label": "Debilidad repentina de un lado, dificultad para hablar, confusión intensa o pérdida súbita de visión.",
+          "route": "neurological"
+        },
+        {
+          "value": "7",
+          "label": "Sangrado abundante, lesión grave o quemadura importante.",
+          "route": "trauma"
+        },
+        {
+          "value": "8",
+          "label": "Hinchazón de lengua/garganta o imposibilidad de respirar por atragantamiento.",
+          "route": "airway"
+        },
+        {
+          "value": "9",
+          "label": "Otra emergencia o necesito ayuda inmediata, aunque no identifico la causa.",
+          "route": "emergency_other"
+        },
+        {
+          "value": "10",
+          "label": "Ninguna de las anteriores.",
+          "route": "none"
+        }
+      ],
+      "routing": {
+        "anyOf": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "action": "pause_and_open_local_procedure",
+        "none": "continue_only_if_no_active_urgent_condition"
+      },
+      "sourceFormatAndFollowup": "Selección única: 1–9 detienen el cuestionario y muestran la guía local; 10 continúa sin alerta."
+    }
+  ],
+  "rules": {
+    "ragEnabled": false,
+    "embeddingEnabled": false,
+    "llmProvider": "Adaption Labs",
+    "llmInvokedAfter": "question_35_confirm_and_save",
+    "llmNeverGeneratesEmergencyProcedures": true,
+    "assistButtonAlwaysVisible": true,
+    "emergencyMessage": "Entrevista pausada. Solicita asistencia de la tripulación mediante el canal de emergencia de la nave. Consulta el procedimiento local correspondiente. No esperes a completar este cuestionario.",
+    "emergencyProcedureSource": "locally_verified_spacecraft_procedures_only",
+    "emergencyNotifications": "simulation_only_until_real_integration_verified",
+    "preserveIncompleteSessions": true,
+    "unansweredNotEquivalentToNo": true,
+    "reportedVsMeasuredSeparate": true,
+    "profileConfirmRatherThanReask": true,
+    "compareOnlySameCrewMemberWithTimestamp": true,
+    "scalesSeparate": [
+      "2.1",
+      "10",
+      "28.rest_quality",
+      "30",
+      "32"
+    ],
+    "clinicalValidationStatus": "not_clinically_validated",
+    "llmSafetyRole": "informational_only"
+  },
+  "consent": {
+    "provider": "Adaption Labs",
+    "requiresExplicitConsent": true,
+    "discloseExternalProcessing": true,
+    "useSyntheticDataUntilPrivacyApproved": true
+  },
+  "sourceNotes": "50 principales: 42 preguntas numeradas aportadas por el usuario más 8 nuevas (41-48); las originales 41 y 42 se renumeran 49 y 50. Pregunta 1.1 y triaje 2.1/2.1.1 son tres preguntas adicionales."
+}

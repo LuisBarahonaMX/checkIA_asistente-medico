@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "mode": "nasa-simulation",
+  "fictionalData": true,
+  "description": "Perfiles ficticios exclusivos para pruebas de CHECK_IA NASA. No representan astronautas reales.",
+  "profiles": [
+    {
+      "id": "AST-001",
+      "name": "Mark",
+      "ageYears": 42,
+      "heightCm": 181,
+      "baselineWeightKg": 82.4,
+      "medicalHistory": ["Sin antecedentes médicos relevantes registrados en la simulación"],
+      "allergies": ["Ninguna conocida en la simulación"],
+      "currentMedications": [],
+      "medicalNotes": "Seguimiento físico rutinario de misión; datos exclusivamente simulados."
+    },
+    {
+      "id": "AST-002",
+      "name": "Mary",
+      "ageYears": 38,
+      "heightCm": 168,
+      "baselineWeightKg": 64.8,
+      "medicalHistory": ["Antecedente simulado de cinetosis durante entrenamiento"],
+      "allergies": ["Ninguna conocida en la simulación"],
+      "currentMedications": [],
+      "medicalNotes": "Registrar episodios de náuseas y orientación espacial durante la misión."
+    },
+    {
+      "id": "AST-003",
+      "name": "John",
+      "ageYears": 45,
+      "heightCm": 176,
+      "baselineWeightKg": 79.1,
+      "medicalHistory": ["Antecedente simulado de migraña episódica"],
+      "allergies": ["Ninguna conocida en la simulación"],
+      "currentMedications": [],
+      "medicalNotes": "Correlacionar síntomas neurológicos nuevos con mediciones ambientales y valoración médica."
+    },
+    {
+      "id": "AST-004",
+      "name": "Mike",
+      "ageYears": 36,
+      "heightCm": 184,
+      "baselineWeightKg": 86.3,
+      "medicalHistory": ["Antecedente simulado de esguince de tobillo resuelto"],
+      "allergies": ["Ninguna conocida en la simulación"],
+      "currentMedications": [],
+      "medicalNotes": "Sin restricciones físicas simuladas al inicio de misión."
+    },
+    {
+      "id": "AST-005",
+      "name": "Eva",
+      "ageYears": 40,
+      "heightCm": 171,
+      "baselineWeightKg": 68.2,
+      "medicalHistory": ["Antecedente simulado de rinitis alérgica estacional"],
+      "allergies": ["Polen (antecedente simulado)"],
+      "currentMedications": [],
+      "medicalNotes": "Registrar síntomas respiratorios y distinguirlos de alertas ambientales de la cabina."
+    }
+  ]
+}

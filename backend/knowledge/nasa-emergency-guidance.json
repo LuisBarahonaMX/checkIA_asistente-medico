@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "nasa-emergency-guidance-v1",
+  "simulationOnly": true,
+  "notice": "Contenido orientativo para simulación. No es un procedimiento certificado por NASA. Sigue los procedimientos autorizados de la nave y las indicaciones del personal responsable.",
+  "emergencies": {
+    "1": {
+      "scenario": "Pérdida inesperada de presión o alarma activa de despresurización",
+      "title": "ALERTA CRÍTICA — POSIBLE DESPRESURIZACIÓN DE LA NAVE",
+      "description": "Se ha identificado una posible pérdida de presión atmosférica dentro de la nave espacial. Esta situación puede comprometer el suministro de una atmósfera respirable y la seguridad de todos los tripulantes. Una reducción importante de presión puede provocar hipoxia, alteraciones de conciencia y otros efectos fisiológicos relacionados con la descompresión.",
+      "actions": [
+        "Interrumpe las actividades que estés realizando y comunica inmediatamente la alarma al resto de la tripulación.",
+        "Activa el procedimiento oficial de respuesta a despresurización correspondiente al vehículo espacial.",
+        "Comprueba, si es posible sin retrasar las acciones de protección, la presión de cabina, su tendencia y las alarmas activas en los instrumentos disponibles.",
+        "Sigue las indicaciones de la nave sobre el uso de protección presurizada, desplazamiento hacia una zona segura y preparación de refugio o evacuación.",
+        "No intentes localizar, reparar o sellar una fuga por iniciativa propia si eso retrasa tu protección o expone a otros astronautas.",
+        "Notifica a la persona responsable de la misión y a control de misión cuando el sistema de comunicaciones lo permita."
+      ],
+      "dataToCommunicate": "hora de inicio, módulo afectado, presión registrada con sus unidades, tendencia de la presión, alarmas activas, tripulantes afectados y disponibilidad de zonas presurizadas seguras.",
+      "finalMessage": "La prioridad es proteger la vida de la tripulación y seguir el procedimiento de emergencia del vehículo. No continúes el cuestionario mientras exista una posible despresurización activa."
+    },
+    "2": {
+      "scenario": "Alarma de oxígeno o dificultad intensa para respirar",
+      "title": "ALERTA CRÍTICA — POSIBLE ALTERACIÓN DE OXÍGENO O EMERGENCIA RESPIRATORIA",
+      "description": "Se ha reportado una alarma relacionada con el oxígeno o dificultad respiratoria importante. La causa podría encontrarse en las condiciones ambientales de la cabina, un problema del sistema de soporte vital o una emergencia médica individual. La aplicación no puede determinar cuál de estas causas está presente sin mediciones y evaluación adicional.",
+      "actions": [
+        "Suspende cualquier esfuerzo físico y solicita asistencia inmediata de otro tripulante.",
+        "Comunica la situación al responsable de operaciones y al responsable médico de la misión.",
+        "Consulta las alarmas y lecturas ambientales disponibles sin retrasar el procedimiento de emergencia.",
+        "Si existe una alarma del sistema de soporte vital, sigue las instrucciones autorizadas de protección respiratoria y traslado hacia una zona con atmósfera verificada como segura.",
+        "Si la dificultad respiratoria afecta solamente a una persona, solicita evaluación médica urgente, aunque las mediciones de la cabina parezcan normales.",
+        "Utiliza equipos de oxígeno o asistencia respiratoria únicamente conforme a los procedimientos aprobados y al entrenamiento recibido."
+      ],
+      "dataToCommunicate": "saturación periférica de oxígeno, si existe una medición fiable; frecuencia respiratoria; hora de inicio; síntomas; concentración ambiental de oxígeno; presión de cabina; y alarmas del sistema de soporte vital.",
+      "finalMessage": "Una dificultad respiratoria intensa requiere atención inmediata. No esperes una evaluación de inteligencia artificial para iniciar la respuesta de emergencia."
+    },
+    "3": {
+      "scenario": "Alarma de CO₂, humo, incendio o posible contaminante",
+      "title": "ALERTA CRÍTICA — ATMÓSFERA POTENCIALMENTE PELIGROSA",
+      "description": "Se ha identificado una posible alteración en la calidad del aire de la nave. Una concentración elevada de dióxido de carbono, la presencia de humo, un incendio o una fuga de sustancias tóxicas puede afectar rápidamente la salud y la seguridad de la tripulación.",
+      "actions": [
+        "Interrumpe las actividades y comunica la alarma al resto de los astronautas.",
+        "Identifica qué tipo de alerta registra el sistema: CO₂, humo, incendio, contaminante químico u otra anomalía.",
+        "Activa el procedimiento de emergencia específico para el tipo de alarma.",
+        "Sigue las instrucciones de protección respiratoria, refugio y aislamiento de módulos cuando correspondan al vehículo y hayan sido establecidas por los procedimientos autorizados.",
+        "Evita ingresar o regresar a una zona posiblemente contaminada sin la protección y autorización correspondientes.",
+        "No manipules ventiladores, conexiones eléctricas, válvulas, sistemas de extinción o depuración atmosférica fuera de los procedimientos de emergencia.",
+        "Comunica las lecturas ambientales disponibles y cualquier síntoma de la tripulación a los responsables operativos y médicos."
+      ],
+      "dataToCommunicate": "tipo de alarma, lugar del incidente, hora, mediciones ambientales con unidades, estado de los sistemas de protección y síntomas como cefalea, mareos, confusión, tos o dificultad respiratoria.",
+      "finalMessage": "Una alarma ambiental debe atenderse como un problema potencialmente colectivo. La prioridad es proteger a toda la tripulación y aplicar el procedimiento oficial."
+    },
+    "4": {
+      "scenario": "Un compañero está inconsciente y no respira normalmente o solamente jadea",
+      "title": "ALERTA MÉDICA CRÍTICA — POSIBLE PARO CARDIORRESPIRATORIO",
+      "description": "Se ha reportado que un tripulante no responde y presenta respiración ausente o anormal. Esta condición puede corresponder a un paro cardiorrespiratorio u otra emergencia que amenaza la vida.",
+      "actions": [
+        "Comprueba primero que la zona sea segura para prestar asistencia.",
+        "Solicita ayuda de inmediato y activa el sistema de emergencias médicas de la nave.",
+        "Comprueba la respuesta del astronauta y si respira normalmente. Los jadeos aislados no deben interpretarse como respiración normal.",
+        "Si no responde y no respira normalmente, inicia el protocolo de reanimación cardiopulmonar para el que fue entrenada la tripulación, utilizando las adaptaciones y dispositivos previstos para microgravedad.",
+        "Solicita el desfibrilador y los equipos médicos de emergencia disponibles. Utilízalos conforme a las instrucciones del dispositivo y al entrenamiento de la misión.",
+        "Asigna a otro tripulante la comunicación con el responsable médico y el seguimiento de las indicaciones del procedimiento.",
+        "Continúa la respuesta de emergencia hasta que exista recuperación, relevo por personal capacitado o una instrucción médica autorizada."
+      ],
+      "dataToCommunicate": "hora aproximada del colapso, última vez que fue visto consciente, respiración observada, respuesta a maniobras, uso del desfibrilador y datos de monitorización disponibles.",
+      "finalMessage": "No continúes el cuestionario ni esperes respuesta de Adaption. La asistencia y reanimación deben comenzar de acuerdo con el entrenamiento y los protocolos de la misión."
+    },
+    "5": {
+      "scenario": "Dolor o presión en el pecho, o palpitaciones acompañadas de desmayo o dificultad respiratoria",
+      "title": "ALERTA MÉDICA CRÍTICA — POSIBLE EMERGENCIA CARDIOVASCULAR",
+      "description": "Se han reportado síntomas que pueden estar asociados con una alteración cardiovascular grave. El dolor torácico, la dificultad respiratoria, las palpitaciones acompañadas de desmayo y otros cambios repentinos requieren valoración médica urgente.",
+      "actions": [
+        "Suspende inmediatamente el ejercicio o la actividad que estabas realizando.",
+        "Solicita asistencia a otro astronauta y notifica al responsable médico de la misión.",
+        "Evita esfuerzos físicos y desplazamientos innecesarios mientras se evalúa la condición.",
+        "Si existen dispositivos autorizados, registra frecuencia cardíaca, presión arterial, saturación de oxígeno y electrocardiograma, siempre que esto no retrase la atención.",
+        "Comunica si el dolor comenzó repentinamente, cuánto tiempo lleva presente, dónde se localiza y si aparece junto con dificultad respiratoria, sudoración, debilidad o pérdida de conciencia.",
+        "Sigue el procedimiento médico de emergencia aprobado para la misión. No tomes medicamentos por iniciativa propia ni utilices recomendaciones generadas por IA para decidir dosis.",
+        "Si el astronauta pierde la conciencia o deja de respirar normalmente, activa inmediatamente el protocolo de reanimación correspondiente."
+      ],
+      "dataToCommunicate": "síntomas, hora de inicio, duración, actividad previa, signos vitales disponibles, antecedentes cardiovasculares registrados y medicamentos previamente indicados.",
+      "finalMessage": "Estos síntomas no deben atribuirse automáticamente al estrés o a la adaptación a microgravedad. Se necesita evaluación médica urgente."
+    },
+    "6": {
+      "scenario": "Debilidad repentina de un lado, dificultad para hablar, confusión intensa o pérdida súbita de visión",
+      "title": "ALERTA MÉDICA CRÍTICA — POSIBLE EMERGENCIA NEUROLÓGICA",
+      "description": "Se han identificado síntomas neurológicos que pueden indicar una alteración grave de la función cerebral. La aparición repentina de debilidad, problemas de lenguaje, confusión o pérdida de visión puede ser compatible con un accidente cerebrovascular u otra emergencia neurológica.",
+      "actions": [
+        "Suspende las actividades y solicita ayuda de inmediato.",
+        "Notifica al responsable médico de la misión y comunica que existe una posible emergencia neurológica.",
+        "Registra la hora exacta en que comenzaron los síntomas o la última ocasión en que el astronauta se encontraba en su estado habitual.",
+        "Si la persona está consciente y puede colaborar, observa posibles diferencias en el movimiento de ambos brazos, la simetría facial, el habla, la visión y la coordinación, sin retrasar la atención.",
+        "Evita que el astronauta realice tareas operativas, manipule controles críticos o se desplace sin asistencia.",
+        "No proporciones alimentos, bebidas ni medicamentos por vía oral hasta que el responsable médico valore la seguridad para tragar y las indicaciones correspondientes.",
+        "Mantén observación de la conciencia y respiración mientras se aplica el procedimiento médico autorizado.",
+        "Comunica cualquier empeoramiento o desaparición de los síntomas. Una recuperación aparente no elimina la necesidad de evaluación urgente."
+      ],
+      "dataToCommunicate": "hora de inicio, síntomas neurológicos identificados, lado del cuerpo afectado, cambios en visión o lenguaje, estado de conciencia, signos vitales disponibles y antecedentes relevantes.",
+      "finalMessage": "Una alteración neurológica repentina requiere atención inmediata, incluso si los síntomas desaparecen después de unos minutos."
+    },
+    "7": {
+      "scenario": "Sangrado abundante, lesión grave o quemadura importante",
+      "title": "ALERTA MÉDICA CRÍTICA — TRAUMATISMO O LESIÓN GRAVE",
+      "description": "Se ha reportado una lesión que podría comprometer la salud del astronauta. La presencia de sangrado abundante, traumatismo importante o quemaduras extensas requiere intervención inmediata y evaluación médica especializada.",
+      "actions": [
+        "Comprueba que el lugar sea seguro y que no existan peligros adicionales para el astronauta o sus compañeros.",
+        "Solicita la asistencia del responsable médico de la misión y del tripulante capacitado en primeros auxilios.",
+        "Si existe un sangrado externo abundante, aplica presión directa sobre la herida con material apropiado, siempre que sea seguro hacerlo.",
+        "Si el sangrado amenaza la vida y no se controla, el personal entrenado debe seguir el protocolo de control de hemorragias de la misión, incluyendo dispositivos específicos cuando estén indicados.",
+        "Evita movimientos innecesarios si existe sospecha de lesión en columna, cabeza, cuello o extremidades.",
+        "Ante una quemadura, interrumpe de forma segura la exposición a la fuente de calor o sustancia causante, conforme al procedimiento correspondiente.",
+        "Para una quemadura térmica, considera el enfriamiento con agua limpia cuando sea seguro y compatible con las condiciones y recursos de la nave. No apliques hielo directamente sobre la lesión.",
+        "No retires objetos incrustados ni intentes realizar procedimientos invasivos sin capacitación y autorización.",
+        "Observa el estado de conciencia, respiración y signos de deterioro mientras se organiza la atención."
+      ],
+      "dataToCommunicate": "mecanismo de lesión, hora del incidente, parte del cuerpo afectada, presencia y magnitud aproximada del sangrado, características visibles de la quemadura, estado de conciencia y medidas de primeros auxilios ya realizadas.",
+      "finalMessage": "El control inicial de una lesión grave debe realizarse sin retrasar la asistencia médica y siguiendo los procedimientos de primeros auxilios establecidos para la misión."
+    },
+    "8": {
+      "scenario": "Hinchazón de lengua o garganta, o imposibilidad de respirar por atragantamiento",
+      "title": "ALERTA MÉDICA CRÍTICA — POSIBLE OBSTRUCCIÓN DE LA VÍA RESPIRATORIA",
+      "description": "Se ha identificado una situación que podría impedir el paso adecuado del aire hacia los pulmones. La hinchazón repentina de lengua o garganta puede estar relacionada con una reacción alérgica grave, mientras que un atragantamiento puede producir una obstrucción mecánica de la vía respiratoria.\nAmbas situaciones requieren atención inmediata, pero sus tratamientos son diferentes.",
+      "actions": [
+        "Solicita ayuda y activa la emergencia médica de la nave.",
+        "Comprueba si el astronauta puede hablar, respirar y toser eficazmente.",
+        "Identifica si existe un posible atragantamiento por alimento u objeto, o si la hinchazón comenzó después de una exposición a medicamentos, alimentos u otras sustancias.",
+        "Si existe obstrucción grave por un cuerpo extraño, el personal capacitado debe aplicar el procedimiento de desobstrucción aprobado para la misión y adaptado al entorno de microgravedad.",
+        "Si se sospecha anafilaxia, sigue inmediatamente el protocolo médico para reacciones alérgicas graves. La adrenalina intramuscular es el tratamiento de primera línea de la anafilaxia; debe utilizarse conforme al protocolo, dispositivo y capacitación autorizados.",
+        "No introduzcas los dedos a ciegas en la boca ni intentes extraer objetos que no puedas visualizar.",
+        "No proporciones agua, alimentos ni medicamentos por vía oral a alguien con dificultad grave para respirar o tragar.",
+        "Si el astronauta pierde el conocimiento y deja de respirar normalmente, inicia el procedimiento de reanimación correspondiente."
+      ],
+      "dataToCommunicate": "inicio del episodio, posible causa, capacidad para hablar o respirar, signos de hinchazón, antecedentes alérgicos registrados, medicamentos de emergencia disponibles y acciones realizadas.",
+      "finalMessage": "La vía respiratoria puede deteriorarse rápidamente. No retrases la atención esperando una respuesta de inteligencia artificial."
+    },
+    "9": {
+      "scenario": "Otra emergencia o necesidad de ayuda inmediata sin identificar la causa",
+      "title": "ALERTA CRÍTICA — EMERGENCIA NO CLASIFICADA",
+      "description": "Has indicado que existe una situación potencialmente peligrosa o que necesitas asistencia inmediata, aunque todavía no puedas identificar el problema.\nCHECK_IA considera esta declaración suficiente para activar una alerta. No es necesario identificar una enfermedad o un fallo del vehículo antes de solicitar ayuda.",
+      "actions": [
+        "Interrumpe la actividad actual y avisa a los demás tripulantes.",
+        "Comunica que existe una emergencia no identificada y solicita asistencia del responsable operativo o médico, según corresponda.",
+        "Comprueba primero tu seguridad y la del resto de la tripulación.",
+        "Observa si existen alarmas activas en los sistemas de presión, oxígeno, CO₂, temperatura, humo, radiación u otros sistemas críticos.",
+        "Identifica si la emergencia afecta a una persona, a varios tripulantes o a las condiciones generales de la nave.",
+        "Si existe riesgo ambiental, sigue el procedimiento correspondiente para permanecer o trasladarte a una zona segura.",
+        "Si existe un problema médico, comunica los síntomas principales, el estado de conciencia y respiración del astronauta afectado.",
+        "No realices reparaciones, maniobras invasivas o intervenciones potencialmente peligrosas basándote únicamente en las recomendaciones de CHECK_IA.",
+        "Cuando sea posible, comunica a control de misión la ubicación, el momento de inicio, las condiciones observadas y la asistencia necesaria."
+      ],
+      "dataToCommunicate": "descripción libre del incidente, hora, ubicación, personas involucradas, alarmas presentes, síntomas observados y acciones realizadas.",
+      "finalMessage": "Si no puedes identificar la causa, prioriza la seguridad, solicita ayuda y utiliza los procedimientos generales de contingencia de tu misión. La incertidumbre no debe retrasar la respuesta."
+    }
+  }
+}
